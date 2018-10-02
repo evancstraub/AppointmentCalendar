@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="467.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppointmentCalendar.CustomersController">
+   <children>
+      <SplitPane dividerPositions="0.4882943143812709" layoutX="82.0" layoutY="40.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="257.0">
+               <children>
+                  <TableView fx:id="customerTable" layoutX="22.0" layoutY="52.0" onMouseClicked="#selectCustomer" prefHeight="346.0" prefWidth="273.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="77.3333181142807" text="ID">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="Id" />
+                      </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="nameColumn" prefWidth="194.66666158040363" text="Name">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="Name" />
+                          </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchField" layoutX="14.0" layoutY="14.0" onKeyPressed="#handleEnterPressed" />
+                  <Button fx:id="searchButton" layoutX="195.0" layoutY="14.0" mnemonicParsing="false" onKeyPressed="#handleEnterPressed" onMouseClicked="#searchButtonAction" text="Search" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="261.0">
+               <children>
+                  <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="465.3333333333333" prefWidth="286.6666666666667" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                         <Label text="Name">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="nameField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                         <Label text="Address">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="addressField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                         <Label text="Address 2">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="address2Field" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        
+                         <Label text="City">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="cityField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                         <Label text="Postal Code">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="postalCodeField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                         <Label text="Country">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                         <TextField fx:id="countryField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Phone">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="phoneField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="287.0" spacing="20.0">
+                           <children>
+                               <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonAction" text="Clear" />
+                              <CheckBox fx:id="activeCheckbox" mnemonicParsing="false" text="Active" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="45.0" spacing="30.0">
+                           <children>
+                               <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="35.0" prefWidth="68.0" text="Save">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="35.0" prefWidth="68.0" text="Delete">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="35.0" prefWidth="68.0" text="Close">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

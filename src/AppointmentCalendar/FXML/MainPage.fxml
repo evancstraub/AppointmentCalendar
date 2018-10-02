@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="766.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppointmentCalendar.MainPageController">
+   <children>
+      <Pane layoutX="-7.0" prefHeight="766.0" prefWidth="1081.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutY="63.0" prefHeight="526.0" prefWidth="195.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="32.0" prefWidth="195.0" text="Menu">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="appointmentsButton" mnemonicParsing="false" onAction="#appointmentWindow" prefHeight="60.0" prefWidth="195.0" text="Appointments">
+                     <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#customerWindow" prefHeight="60.0" prefWidth="195.0" text="Customers">
+                     <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#reportsWindow" prefHeight="60.0" prefWidth="195.0" text="Reports">
+                     <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#settingsWindow" prefHeight="60.0" prefWidth="195.0" text="Settings">
+                      <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#logoutButtonAction" prefHeight="60.0" prefWidth="195.0" text="Logout">
+                     <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="60.0" prefWidth="195.0" text="Close">
+                     <font>
+                        <Font name="Helvetica" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </VBox>
+            <GridPane fx:id="monthCalendar" alignment="CENTER" layoutX="196.0" layoutY="94.0" prefHeight="667.0" prefWidth="881.0" style="-fx-background-color: white;">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0">
+                    <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>                  
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                    <columns>
+                        <TableColumn minWidth="220.0" prefWidth="-1.0" text="C1">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TableView>
+               </children>
+            </GridPane>
+            <GridPane layoutX="197.0" layoutY="56.0" prefHeight="33.0" prefWidth="879.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Sunday" underline="true">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Monday" underline="true" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tuesday" underline="true" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Wednesday" underline="true" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Thursday" underline="true" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Friday" underline="true" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Saturday" underline="true" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="Calibri" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane fx:id="weekCalendar" layoutX="196.0" layoutY="94.0" prefHeight="361.0" prefWidth="881.0" visible="false">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="1">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="2">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="3">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="4">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="5">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <TableView onMouseClicked="#selectionAction" prefHeight="200.0" GridPane.columnIndex="6">
+                     <columns>
+                        <TableColumn editable="false" minWidth="220.0" prefWidth="-1.0" text="C1">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutY="-2.0" prefHeight="60.0" prefWidth="1080.0" style="-fx-border-width: 2;">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutY="2.0" prefHeight="60.0" prefWidth="1080.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <RadioButton fx:id="monthSelection" mnemonicParsing="false" onAction="#setCalendarView" selected="true" text="Month">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="viewMode" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="weekSelection" mnemonicParsing="false" onAction="#setCalendarView" text="Week" toggleGroup="$viewMode" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="100.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <Button fx:id="previousButton" mnemonicParsing="false" onAction="#buttonAction" prefHeight="25.0" text="Previous">
+                     <HBox.margin>
+                        <Insets left="138.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="monthText" alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#buttonAction" prefHeight="25.0" text="Next">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </HBox>
+            
+               </children>
+      </Pane>
+   </children>
+</AnchorPane>
